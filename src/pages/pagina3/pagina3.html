@@ -7,12 +7,22 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>pagina3</ion-title>
+    <ion-title>{{mutante.nombre}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <h2>{{mutante.poder}}</h2>
+
+  <button ion-button color="primary" block
+    (click)="fnIrAtras()">Ir Atras con Evento</button>
+
+  <button ion-button color="secondary" block
+    (click)="fnIrRoot()">Ir Root</button>
+
+  <button ion-button color="danger" block
+    navPop>Ir Atras - HTML</button>
 
 </ion-content>
