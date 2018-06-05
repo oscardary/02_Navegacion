@@ -7,12 +7,22 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>modal</ion-title>
+    <ion-title>Pagina Modal</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  
+  <button ion-button block color="primary"
+    (click)="fnCerrarConParam()">
+    Cerrar con parametros
+  </button>
+
+  <button ion-button block color="morado"
+    (click)="fnCerrarSinParam()">
+    Cerrar sin parametros
+  </button>
 
 </ion-content>

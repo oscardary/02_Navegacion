@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ModalController } from 'ionic-angular';
 
+import { ModalPage } from '../index.pages';
 /**
  * Generated class for the AjustesPage page.
  *
@@ -14,11 +15,28 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class AjustesPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams,
+              private modalCtrl: ModalController) {
   }
 
   fnActivarPrincipal(){
     this.navCtrl.parent.select(1);
+  }
+
+  fnMostrarModal(){
+    let modal = this.modalCtrl.create(ModalPage, {nombre:"Oskar",edad:26});
+        modal.present();
+
+        modal.onDidDismiss(parameters=>{
+          if(!!parameters){
+            console.log("Datos que retornan...");
+            console.log(parameters);
+          }
+          else{
+            console.log("No se retornaron datos!");
+          }
+        });
   }
 
 }
